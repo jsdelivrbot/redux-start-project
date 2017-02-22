@@ -1,5 +1,5 @@
 # Project based on on ReduxSimpleStarter
-This project is based on ReduxSimpleStarter, following the course [Redux](https://www.udemy.com/react-redux/).
+This project is based on ReduxSimpleStarter, following the Udemy-course [Modern React with Redux](https://www.udemy.com/react-redux/).
 See below for info on the [course](https://www.udemy.com/react-redux/) and on [ReduxSimpleStarter](https://github.com/StephenGrider/ReduxSimpleStarter).
 
 =============================================================
