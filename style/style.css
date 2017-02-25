@@ -2,6 +2,41 @@ body {
 	font-size: 16px;
 }
 
-.media-heading h2 {
+.form-group.search-bar {
+	margin: 20px;
+	text-align: center;
+}
+
+.search-bar input {
+	width: 75%;
+	margin: 0 auto;
+	border-radius: 4px;
+}
+
+.video-item img {
+	max-width: 64px;
+}
+
+.video-detail .details {
+	margin-top: 10px;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+}
+
+.list-group-item {
+	cursor: pointer;
+}
+
+.list-group-item:hover {
+	background-color: #eee;
+}
+
+.list-group-item h2 {
 	font-size: 1.1rem;
+}
+
+.video-detail .details h1 {
+	margin-top: 1rem;
+	font-size: 1.4rem;
 }

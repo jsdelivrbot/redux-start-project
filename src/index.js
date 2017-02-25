@@ -20,11 +20,11 @@ class App extends Component {
 			selectedVideo: null
 		};
 
-		this.searchVideo();
+		this.searchVideo("surfboards");
 	}
 
-	searchVideo() {
-		YTSearch({ key: API_KEY, term: "surfboards" }, videos => {
+	searchVideo(term) {
+		YTSearch({ key: API_KEY, term }, videos => {
 
 			//By using arrow-function we can use "this". When the key and value is
 			//the same, we can shorten it
@@ -38,10 +38,10 @@ class App extends Component {
 	render() {
 		return(
 			<div>
-				<SearchBar />
+				<SearchBar onSearchTermChange={term => this.searchVideo(term)} />
 				<VideoDetail video={this.state.selectedVideo}/>
 				<VideoList
-					onVideoSelect={(selectedVideo) => this.setState({ selectedVideo })}
+					onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
 					videos={this.state.videos}/>
 			</div>
 		);
