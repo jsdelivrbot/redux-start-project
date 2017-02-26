@@ -13,12 +13,12 @@ class SearchBar extends Component {
 			<div className="search-bar form-group">
 				<input className="form-control"
 					value={this.state.term}
-					onChange={event => this.onInputChange(event.target.value)}/>
+					onChange={ event => this.inputChange(event.target.value) }/>
 			</div>
 		);
 	}
 
-	onInputChange(term) {
+	inputChange(term) {
 		this.setState({ term });
 		this.props.onSearchTermChange(term);
 	}

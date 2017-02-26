@@ -1,4 +1,5 @@
 /* Packages */
+import _ 							from "lodash";
 import React, { Component } 	from "react";
 import ReactDOM 					from "react-dom";
 import YTSearch 					from "youtube-api-search";
@@ -20,7 +21,7 @@ class App extends Component {
 			selectedVideo: null
 		};
 
-		this.searchVideo("surfboards");
+		this.searchVideo("Rough collie puppies");
 	}
 
 	searchVideo(term) {
@@ -36,13 +37,16 @@ class App extends Component {
 	}
 
 	render() {
+		//pass an inner function to debounce. Debounce takes it and return a function that can only
+		//be called once every (x)ms we specify, in this case 300.
+		const searchVideo = _.debounce( (term) => { this.searchVideo(term); }, 300);
 		return(
 			<div>
-				<SearchBar onSearchTermChange={term => this.searchVideo(term)} />
-				<VideoDetail video={this.state.selectedVideo}/>
+				<SearchBar onSearchTermChange={ searchVideo } />
+				<VideoDetail video={ this.state.selectedVideo }/>
 				<VideoList
-					onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
-					videos={this.state.videos}/>
+					onVideoSelect={ selectedVideo => this.setState({ selectedVideo }) }
+					videos={ this.state.videos }/>
 			</div>
 		);
 	}
